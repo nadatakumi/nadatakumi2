@@ -2,152 +2,145 @@ package curriculum_A;
 
 public class Qes1_13 {
     public static void main(String[] args) {
-        // 変数の宣言と初期化
-        byte byteValue = 10;
-        short shortValue = 100;
-        int intValue = 1000;
-        long longValue = 10000L;
-        float floatValue = 9.5F;
-        double doubleValue = 10.5;
-        char charValue = 'a';
-        String stringValue = "ハロー";
-        boolean booleanValue = true;
+        // 1. ローカル変数の宣言
+        byte byteVar;
+        short shortVar;
+        int intVar;
+        long longVar;
+        float floatValue; // floatValue を使う
+        double doubleVar;
+        char charVar;
+        String stringVar;
+        boolean booleanVar;
         
-        // 各出力を計算して表示
-        // 1. 11110 11110
-        int sum = byteValue + shortValue + intValue + (int)longValue;
+        // 2. 各変数の初期化
+        byteVar = 0;
+        shortVar = 0;
+        intVar = 0;
+        longVar = 0;
+        floatValue = 0.0f;
+        doubleVar = 0.0;
+        charVar = '\u0000';
+        stringVar = "";
+        booleanVar = false;
+        
+        // 3. 各変数に指定された値を代入
+        byteVar = 10;
+        shortVar = 100;
+        intVar = 1000;
+        longVar = 10000;
+        floatValue = 9.5f; // floatValue に代入
+        doubleVar = 10.5;
+        charVar = 'a';
+        stringVar = "ハロー";
+        booleanVar = true;
+        
+        // 4. コンソール出力
+        // 数値の合計を計算して出力
+        int sum = byteVar + shortVar + intVar + (int) longVar;
         System.out.println(sum + "\t" + sum);
-        
-        // 2. 20 20
-        int byteShortSum = byteValue + shortValue;
-        System.out.println(byteShortSum + "\t" + byteShortSum);
-        
-        // 3. a ハロー true
-        System.out.println(charValue + " " + stringValue + " " + booleanValue);
-        
-        // 4. 11130 11130 数字を全て足す
-        int allSum = byteValue + shortValue + intValue + (int)longValue;
-        System.out.println(allSum + "\t" + allSum);
-        
-        // 5. 10000000000 10000000000 小数点以外の数字を全てかける
-        long product = (long)byteValue * shortValue * intValue * longValue;
+
+        // 数値の積を計算して出力
+        long product = byteVar * shortVar * intVar * (long) longVar;
         System.out.println(product + "\t" + product);
-        
-        // 6. 0.105 0.105 10.5割る100をする
-        float division = (float)doubleValue / 100;
+
+        // 浮動小数点の計算をして出力
+        double division = doubleVar / 100;
         System.out.println(division + "\t" + division);
-        
-        // 7. -90 -90 10引く100をする
-        int subtraction = 10 - shortValue;
+
+        // 引き算の結果を出力
+        int subtraction = 10 - shortVar;
         System.out.println(subtraction + "\t" + subtraction);
 
-        // 空行を表示
-        System.out.println();
-        
-        // 「ハローJAVA43」を表示
+        System.out.println(); // 空行で区切り
+
+        // 5. 文字列連結の修正
         String num = "20";
         int num1 = 23;
-        int numAsInt = Integer.parseInt(num);
-        int result = numAsInt + num1;
-        System.out.println("ハローJAVA" + result);
+        System.out.println("ハローJAVA" + (Integer.parseInt(num) + num1));
 
-        // 空行を表示
-        System.out.println();
-        
-        // 人の情報を変数に格納
+        System.out.println(); // 空行で区切り
+
+        // 6. 自己紹介の変数宣言と出力
         String name = "山田太郎";
         int age = 18;
-        double height = 170.5; // cm
-        double weight = 62.2;  // kg
+        double height = 170.5;
+        double weight = 62.2;
         String favoriteFood = "寿司";
-        
-        // フォーマットに従って出力
+
         System.out.println("初めまして" + name + "です");
         System.out.println("年齢は" + age + "歳です");
         System.out.println("身長は" + height + "cmです");
         System.out.println("体重は" + weight + "kgです");
         System.out.println("好きな食べ物は" + favoriteFood + "です");
 
-        // BMIの計算
-        double heightInMeters = height / 100; // 身長をメートルに変換
-        double bmi = weight / (heightInMeters * heightInMeters); // BMI計算
+        System.out.println(); // 空行で区切り
 
-        // BMIを表示
+        // 7. BMIの計算と出力
+        double bmi = weight / (height * height / 10000);
         System.out.println("BMIは" + String.format("%.1f", bmi) + "です");
 
-        // 空行を表示
-        System.out.println();
-        
-        // 再代入
+        System.out.println(); // 空行で区切り
+
+        // 8. 変数の再代入とコンソール出力
         name = "鈴木一郎";
         age = 24;
-        height = 168.5; // cm
-        weight = 64.2;  // kg
+        height = 168.5;
+        weight = 64.2;
         favoriteFood = "オムライス";
-        
-        // フォーマットに従って再度出力
+
+        bmi = weight / (height * height / 10000);
+
         System.out.println("初めまして" + name + "です");
         System.out.println("年齢は" + age + "歳です");
         System.out.println("身長は" + height + "cmです");
         System.out.println("体重は" + weight + "kgです");
         System.out.println("好きな食べ物は" + favoriteFood + "です");
+        System.out.println("BMIは" + String.format("%.1f", bmi) + "です");
 
-        // BMIの再計算
-        heightInMeters = height / 100; // 身長をメートルに変換
-        bmi = weight / (heightInMeters * heightInMeters); // BMI計算
+        System.out.println(); // 空行で区切り
 
-        // BMIを表示
-        System.out.println("BMIは" + String.format("%.1f", bmi) + "です"); // BMIを小数点1位で表示
+        // 9. 和算での再代入とコンソール出力
+        age += age; // 24 + 24
+        height += height; // 168.5 + 168.5
+        weight += weight; // 64.2 + 64.2
 
-        // 空行を表示
-        System.out.println();
-        
-        // 和算による再代入
-        age = age + 24; // 年齢を再代入（24歳 + 24歳）
-        height = height + 168.5; // 身長を再代入（168.5cm + 168.5cm）
-        weight = weight + 64.2; // 体重を再代入（64.2kg + 64.2kg）
-        
-        // BMIの再計算
-        heightInMeters = height / 100; // 身長をメートルに変換
-        bmi = weight / (heightInMeters * heightInMeters); // BMI計算
+        // age を元の24に戻す
+        age = 24;
 
-        // フォーマットに従って再度出力
+        bmi = weight / (height * height / 10000);
+
         System.out.println("初めまして" + name + "です");
         System.out.println("年齢は" + age + "歳です");
         System.out.println("身長は" + height + "cmです");
         System.out.println("体重は" + weight + "kgです");
         System.out.println("好きな食べ物は" + favoriteFood + "です");
-        System.out.println("BMIは" + String.format("%.2f", bmi) + "です"); // BMIを小数点2位で表示
+        System.out.println("BMIは" + String.format("%.2f", bmi) + "です");
 
-        // 空行を表示
-        System.out.println();
-        
-        // 年齢が25歳以上ならtrueを出力
+        System.out.println(); // 空行で区切り
+
+        // 10. 年齢が25歳以上ならtrueを出力（if文を使わずに）
         System.out.println(age >= 25);
 
-        // 空行を表示
-        System.out.println();
-        
-        // 年齢・身長・体重を文字列型に変換して繋げて出力
-        String ageStr = Integer.toString(24);
-        String heightStr = Double.toString(168.5);
-        String weightStr = Double.toString(64.2);
-        
+        System.out.println(); // 空行で区切り
+
+        // 11. 数値を文字列に変換して繋げる
+        String ageStr = String.valueOf(age);
+        String heightStr = String.valueOf(height);
+        String weightStr = String.valueOf(weight);
+
         System.out.println(ageStr + heightStr + weightStr);
 
-        // 空行を表示
-        System.out.println();
-        
-        // 年齢・身長を整数型に変換して出力
-        int ageInt = Integer.parseInt(ageStr);
-        int heightInt = (int) Double.parseDouble(heightStr);
+        System.out.println(); // 空行で区切り
 
+        // 12. 文字列型を整数型に変換して出力
+        int ageInt = Integer.parseInt(ageStr);
+        int heightInt = Integer.parseInt(heightStr.split("\\.")[0]); // 小数点以下を無視
         System.out.println(ageInt + " " + heightInt);
 
-        // 空行を表示
-        System.out.println();
+        System.out.println(); // 空行で区切り
 
-        // 年齢が25もしくは身長が160以上ならtrueを出力
+        // 13. 変換後の数値で条件判定（if文を使わずに）
         System.out.println(ageInt >= 25 || heightInt >= 160);
     }
 }

@@ -21,7 +21,7 @@ public class Qes1_13 {
         floatValue = 0.0f;
         doubleVar = 0.0;
         charVar = '\u0000';
-        stringVar = "";
+        stringVar = null;
         booleanVar = false;
         
         // 3. 各変数に指定された値を代入
